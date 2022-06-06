@@ -1,0 +1,22 @@
+https://www.digitalocean.com/community/tutorials/how-to-remotely-access-gui-applications-using-docker-and-caddy-on-debian-9
+https://hub.docker.com/r/browserless/chrome
+https://docs.browserless.io/docs/docker.html
+https://medium.com/dot-debug/running-chrome-in-a-docker-container-a55e7f4da4a8
+
+
+Launching chrome with a proxy:
+google-chrome --proxy-server="https://192.168.29.242:8080"
+
+Installing mitmproxy in ubuntu:
+sudo apt install mitmproxy
+export LANG=en_US.UTF-8
+
+
+///LANG needs to be set to solve this error
+Error: mitmproxy requires a UTF console environment.
+Set your LANG environment variable to something like en_US.UTF-8
+
+
+//Adding mitmproxy ca-cert to chrome (First launch mitmproxy. this will create cert in .mitmproxy folder)
+sudo apt install libnss3-tools
+certutil -d sql:$HOME/.pki/nssdb -A -t TC -n "mitmproxy" -i ~/.mitmproxy/mitmproxy-ca-cert.cer
