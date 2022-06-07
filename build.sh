@@ -3,7 +3,7 @@
 cd chrom-browser;
 docker build -t chrome-browser .;
 docker network create chrome-net;
-docker volumn create chrome-data;
+docker volume create chrome-data;
 docker run --detach --restart=always --volume=chrome-data:/data --net=chrome-net --name=chrome-app --privileged chrome-browser;
 
 cd ../chrome-caddy
