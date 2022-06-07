@@ -1,0 +1,11 @@
+{
+    order webdav last
+}
+:8085 {
+    log
+    root * /data
+    reverse_proxy chrome-app:8085
+
+
+
+}
